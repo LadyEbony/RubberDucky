@@ -19,13 +19,15 @@ public class CursorEvent : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         horizontal = Input.GetAxisRaw(HorizontalAxis + playerid);
         vertical = Input.GetAxisRaw(VerticalAxis + playerid);
+        Debug.Log(horizontal + " " + vertical);
         if ((horizontal != 0) | (vertical != 0))
         {
             Vector3 move = new Vector3(horizontal, -vertical, 0);
-            //Debug.Log(move);
+            Debug.Log(move);
             transform.Translate(move * Time.deltaTime * cursorSpeed);
         }
         else
