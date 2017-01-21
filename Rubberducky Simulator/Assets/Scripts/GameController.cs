@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public Dictionary<int, GameObject> Players = new Dictionary<int, GameObject>();
+    public List<GameObject> Ducks = new List<GameObject>();
+
+    public int DucksSaved = 0;
+    public int DucksKilled = 0;
 
     private int _CurrentStage = 0;
     public int CurrentStage
@@ -15,13 +18,9 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        int i = 0;
-        foreach (GameObject player in players)
-        {
-            Players.Add(i, player);
-            ++i;
-        }
+        GameObject[] ducks = GameObject.FindGameObjectsWithTag("Duck");
+        Ducks = new List<GameObject>(ducks);
+        Debug.Log(Ducks.Count);
     }
 
 	// Use this for initialization

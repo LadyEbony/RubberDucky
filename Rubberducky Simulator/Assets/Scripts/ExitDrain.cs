@@ -28,7 +28,7 @@ public class ExitDrain : MonoBehaviour {
 		if(coll.gameObject.tag == "Player")
 				{
 					playerCount++;
-					if (playerCount == gameController.Players.Count)
+					if (playerCount == gameController.Ducks.Count)
 						gameController.StageWin ();
 				}
 	}
