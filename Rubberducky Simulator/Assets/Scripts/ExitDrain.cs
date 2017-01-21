@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class ExitDrain : MonoBehaviour {
 
+	private int playerCount;
+	public GameController gameController;
+
+	void Awake()
+	{
+		playerCount = 0;
+		//gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
+	}
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,12 +23,39 @@ public class ExitDrain : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter2D(Collision2D coll)
+	void OnTriggerEnter2D(Collision2D coll)
 	{
 		if(coll.gameObject.tag == "Player")
+				{
+					playerCount++;
+					if (playerCount == gameController.Players.Count)
+						gameController.StageWin ();
+				}
+	}
+
+	void OnTriggerExit2D(Collision2D coll)
+	{
+		if (coll.gameObject.tag == "Player") 
 		{
-			coll.gameObject.SetActive(false);	//"kill" Player object
-			//Game Won/Complete
+			playerCount--;
 		}
 	}
+
+//	void OnCollisionEnter2D(Collision2D coll)
+//	{
+//		if(coll.gameObject.tag == "Player")
+//		{
+//			playerCount++;
+//			if (playerCount == gameController.Players.Count)
+//				gameController.StageWin ();
+//		}
+//	}
+//
+//	void OnCollisionExit2D(Collision2D coll)
+//	{
+//		if (coll.gameObject.tag == "Player") 
+//		{
+//			playerCount--;
+//		}
+//	}
 }

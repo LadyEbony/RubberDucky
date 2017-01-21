@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class KillUrchin : MonoBehaviour {
 
-	private PolygonCollider2D urchinCollider;
+	//private PolygonCollider2D urchinCollider;
+	public GameController gameController;
+
+	void Awake()
+	{
+		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
+	}
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		
 	}
 	
@@ -17,12 +24,16 @@ public class KillUrchin : MonoBehaviour {
 		
 	}
 
+
+	/// <summary>
+	/// Collision function called when colliding with another collider
+	/// </summary>
 	void OnCollisionEnter2D(Collision2D coll)
 	{
 		if(coll.gameObject.tag == "Player")
 		{
 			coll.gameObject.SetActive(false);	//"kill" Player object
-			//Game Over
 		}
+		gameController.StageLost();
 	}
 }
