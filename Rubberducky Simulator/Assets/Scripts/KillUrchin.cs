@@ -9,7 +9,7 @@ public class KillUrchin : MonoBehaviour {
 
 	void Awake()
 	{
-		gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
+		//gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
 	}
 
 	// Use this for initialization
@@ -30,10 +30,10 @@ public class KillUrchin : MonoBehaviour {
 	/// </summary>
 	void OnCollisionEnter2D(Collision2D coll)
 	{
-		if(coll.gameObject.tag == "Player")
+		if(coll.gameObject.tag == "Duck")
 		{
-			coll.gameObject.SetActive(false);	//"kill" Player object
+			gameController.DucksKilled++;
+			coll.gameObject.SetActive(false);	
 		}
-		gameController.StageLost();
 	}
 }

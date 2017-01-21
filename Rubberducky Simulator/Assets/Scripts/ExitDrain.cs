@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ExitDrain : MonoBehaviour {
 
-	private int playerCount;
 	public GameController gameController;
 
 	void Awake()
 	{
-		playerCount = 0;
 		//gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
 	}
 
@@ -23,21 +21,23 @@ public class ExitDrain : MonoBehaviour {
 		
 	}
 
+	/// <summary>
+	/// Trigger function called when a "duck" touches the ExitDrain trigger
+	/// </summary>
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		if(coll.gameObject.tag == "Player")
-				{
-					playerCount++;
-					if (playerCount == gameController.Ducks.Count)
-						gameController.StageWin ();
-				}
-	}
-
-	void OnTriggerExit2D(Collider2D coll)
-	{
-		if (coll.gameObject.tag == "Player") 
+		if(coll.gameObject.tag == "Duck")
 		{
-			playerCount--;
+			gameController.DucksSaved++;
+			coll.gameObject.SetActive (false);
 		}
 	}
+
+//	void OnTriggerExit2D(Collider2D coll)
+//	{
+//		if (coll.gameObject.tag == "Duck") 
+//		{
+//			
+//		}
+//	}
 }
