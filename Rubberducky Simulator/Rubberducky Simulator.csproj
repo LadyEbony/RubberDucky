@@ -75,6 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DuckyEvent.cs" />
+    <Compile Include="Assets\Scripts\RippleEvent.cs" />
     <Compile Include="Assets\Scripts\SpawnWave.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
