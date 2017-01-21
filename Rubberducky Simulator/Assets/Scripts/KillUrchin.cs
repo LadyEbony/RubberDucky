@@ -32,7 +32,7 @@ public class KillUrchin : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Duck")
 		{
-			gameController.DucksKilled++;
+			gameController.CurrentStage.DucksKilled++;
 			coll.gameObject.SetActive(false);	
 		}
 	}

@@ -28,7 +28,7 @@ public class ExitDrain : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Duck")
 		{
-			gameController.DucksSaved++;
+			gameController.CurrentStage.DucksSaved++;
 			coll.gameObject.SetActive (false);
 		}
 	}

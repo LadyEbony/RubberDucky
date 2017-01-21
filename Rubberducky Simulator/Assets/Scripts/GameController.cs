@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public List<GameObject> Ducks = new List<GameObject>();
+    public List<StageData> StageList = new List<StageData>();
 
-    public int DucksSaved = 0;
-    public int DucksKilled = 0;
-
-    private int _CurrentStage = 0;
-    public int CurrentStage
+    private int StageIndex = 0;
+    private StageData _CurrentStage;
+    public StageData CurrentStage
     {
-        get { return _CurrentStage; }
-        private set { _CurrentStage = value; }
-    }
-
-    void Awake()
-    {
-        GameObject[] ducks = GameObject.FindGameObjectsWithTag("Duck");
-        Ducks = new List<GameObject>(ducks);
-        Debug.Log(Ducks.Count);
+        get
+        {
+            return StageList[StageIndex];
+        }
     }
 
 	// Use this for initialization
@@ -40,13 +33,13 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void StageWin()
     {
-
+        StageIndex++;
     }
 
     /// <summary>
-    /// Lose stage, and reset current stage
+    /// Resetart Current Stage
     /// </summary>
-    public void StageLost()
+    public void StageRestart()
     {
 
     }
