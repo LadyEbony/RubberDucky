@@ -76,9 +76,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CursorEvent.cs" />
+    <Compile Include="Assets\Scripts\DebugPlayerMove.cs" />
+    <Compile Include="Assets\Scripts\DoorSwitch.cs" />
+    <Compile Include="Assets\Scripts\Duck_Classes\Collectible.cs" />
+    <Compile Include="Assets\Scripts\Duck_Classes\Duck.cs" />
+    <Compile Include="Assets\Scripts\Duck_Classes\WingMan.cs" />
     <Compile Include="Assets\Scripts\DuckyEvent.cs" />
+    <Compile Include="Assets\Scripts\ExitDrain.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\KillUrchin.cs" />
     <Compile Include="Assets\Scripts\RippleEvent.cs" />
     <Compile Include="Assets\Scripts\SpawnWave.cs" />
+    <Compile Include="Assets\Scripts\SpriteStorage.cs" />
+    <Compile Include="Assets\Scripts\StageData.cs" />
+    <Compile Include="Assets\Scripts\TitleMeny\TitleMenuButtons.cs" />
+    <Compile Include="Assets\Scripts\TitleMeny\TitleMenuControllers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
