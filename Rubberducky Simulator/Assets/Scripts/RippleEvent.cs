@@ -5,27 +5,27 @@ using UnityEngine;
 public class RippleEvent : MonoBehaviour {
 
     public float radius;
-    public float power;
-    [SerializeField] private int internalMax;
+    public float maxknockback;
+    [SerializeField] private float SecondsUntilDestroyed = 2;
     private int internalCounter;
 
     private void Start()
     {
-        internalMax = 30;
         //gameObject.transform.localScale = new Vector3(radius / 50.0f, radius / 50.0f, radius / 50.0f);
         gameObject.transform.localScale = new Vector3(radius, radius, radius);
-        gameObject.GetComponent<CircleCollider2D>().radius = 0.25f; //Sets Radius of Collider
-
+        //gameObject.GetComponent<CircleCollider2D>().radius = radius; //Sets Radius of Collider
+        StartCoroutine("WaitTillDestroyed");
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Rigidbody2D rb = collision.GetComponent<Rigidbody2D>(); //Duck
-
+        float power = 0f;
         Vector3 newForce = Vector3.Normalize(collision.gameObject.transform.position - this.transform.position);
         Debug.Log("Normalized Vector: " + newForce);
         float distance = Vector2.Distance(collision.gameObject.transform.position, this.transform.position);
-        power = (radius / distance) ;
+        power = (1f - (distance / radius)) * maxknockback;
+
         Debug.Log("Force: " + power);
         Debug.Log("Distance from impact = " + distance);
         rb.AddForce(newForce * power);
@@ -33,13 +33,10 @@ public class RippleEvent : MonoBehaviour {
         //Debug.Break();
     }
 
-    private void Update()
-    {
-        internalCounter++;
-        if (internalCounter >= internalMax)
-        {
-            Destroy(gameObject);
-        }
-    }
 
+    IEnumerator WaitTillDestroyed()
+    {
+        yield return new WaitForSeconds(SecondsUntilDestroyed);
+        Destroy(gameObject);
+    }
 }

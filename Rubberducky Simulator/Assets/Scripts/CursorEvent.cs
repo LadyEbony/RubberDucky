@@ -31,7 +31,7 @@ public class CursorEvent : MonoBehaviour {
         else
         {
             transform.Translate(Vector3.zero);
-            Debug.Log("Stop");
+            //Debug.Log("Stop");
         }
         if(Input.GetButtonDown(AButton + playerid))
         {
@@ -48,7 +48,7 @@ public class CursorEvent : MonoBehaviour {
         //Debug.Log("x: " + mousex + "| y: " + mousey);
         GameObject wave = (GameObject)Instantiate(RippleObject);
         Transform waveb = wave.GetComponent<Transform>();
-        waveb.transform.SetParent(this.transform);
+        //waveb.transform.SetParent(this.transform);
         waveb.transform.localPosition = new Vector3(mousex, mousey, 0);
         waveb.transform.localScale = new Vector3(1, 1, 1);
     }
