@@ -11,7 +11,7 @@ public class Collectible : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnTriggerEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         foreach(string duck in DucksAllowed)
         {
