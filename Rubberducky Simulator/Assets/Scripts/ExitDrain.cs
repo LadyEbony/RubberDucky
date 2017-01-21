@@ -5,10 +5,12 @@ using UnityEngine;
 public class ExitDrain : MonoBehaviour {
 
 	public GameController gameController;
+	public StageData stageData;
 
 	void Awake()
 	{
 		//gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
+		stageData = gameObject.GetComponentInParent(typeof(StageData)) as StageData;
 	}
 
 	// Use this for initialization
@@ -28,16 +30,8 @@ public class ExitDrain : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Duck")
 		{
-			gameController.CurrentStage.DucksSaved++;
+			stageData.DucksSaved++;
 			coll.gameObject.SetActive (false);
 		}
 	}
-
-//	void OnTriggerExit2D(Collider2D coll)
-//	{
-//		if (coll.gameObject.tag == "Duck") 
-//		{
-//			
-//		}
-//	}
 }

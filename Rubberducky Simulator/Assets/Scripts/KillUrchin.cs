@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class KillUrchin : MonoBehaviour {
 
-	//private PolygonCollider2D urchinCollider;
 	public GameController gameController;
+	public StageData stageData;
 
 	void Awake()
 	{
 		//gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
+		stageData = gameObject.GetComponentInParent(typeof(StageData)) as StageData;
 	}
 
 	// Use this for initialization
@@ -32,7 +33,7 @@ public class KillUrchin : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Duck")
 		{
-			gameController.CurrentStage.DucksKilled++;
+			stageData.DucksKilled++;
 			coll.gameObject.SetActive(false);	
 		}
 	}
