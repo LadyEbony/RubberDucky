@@ -4,25 +4,35 @@ using UnityEngine;
 
 public class RippleEvent : MonoBehaviour {
 
-    public int internalCounter;
-    int interalDuration;
+    public float radius;
+    public float power;
 
-	// Use this for initialization
-	void Start () {
-        internalCounter = 0;
-        interalDuration = 30;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        CountDown();
-	}
+    private int internalCounter;
+    public int internalMax;
 
-    private void CountDown()
+    private void Start()
+    {
+        internalMax = 30;
+        //gameObject.GetComponent<SphereCollider>().radius = gameObject.transform.localScale.x / 2;
+        //radius = gameObject.GetComponent<SphereCollider>().radius;
+        //power = 200.0f;
+
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+            if (rb != null)
+                rb.AddExplosionForce(power, explosionPos, radius);
+
+        }
+    }
+
+    private void Update()
     {
         internalCounter++;
-
-        if (internalCounter >= interalDuration)
+        if (internalCounter >= internalMax)
         {
             Destroy(gameObject);
         }
