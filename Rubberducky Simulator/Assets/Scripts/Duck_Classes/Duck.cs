@@ -14,12 +14,14 @@ public class Duck : MonoBehaviour
     public string[] IgnoranceLayers; //Ignore these layers
     bool isdead;
     public string DuckID;
+    [SerializeField ]GameController GM;
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = 0;
         RB.mass = DuckWeight;
         isdead = false;
+        
     }
 
     // Update is called once per frame
@@ -44,6 +46,18 @@ public class Duck : MonoBehaviour
             Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer(Lay));
             Debug.Log("Ignoring  " + col.gameObject.tag + " " + Lay);
             Debug.Break();
+        }
+        foreach (string hit in CollisionTag)
+        {
+            if(col.gameObject.tag == hit)
+            {
+                col.gameObject.SetActive(false);
+                if (GM != null)
+                {
+                    GM.CurrentStage.DucksKilled++;
+                }
+                
+            }
         }
     }
 }
