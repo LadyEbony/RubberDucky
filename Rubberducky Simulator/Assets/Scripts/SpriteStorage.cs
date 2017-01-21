@@ -32,7 +32,7 @@ public class SpriteStorage : MonoBehaviour
     public void SetSprite(int id)
     {
         SpriteRenderer.sprite = GetSprite(id);
-        Debug.Log("set to " + id);
+        //Debug.Log("set to " + id);
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ public class SpriteStorage : MonoBehaviour
     public void SetSprite(string name)
     {
         SpriteRenderer.sprite = GetSprite(name);
-        Debug.Log("set to " + name);
+        //Debug.Log("set to " + name);
     }
 
     /// <summary>
