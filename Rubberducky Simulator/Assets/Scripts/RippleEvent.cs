@@ -19,17 +19,19 @@ public class RippleEvent : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Rigidbody2D rb = collision.GetComponent<Rigidbody2D>(); //Duck
-        float power = 0f;
-        Vector3 newForce = Vector3.Normalize(collision.gameObject.transform.position - this.transform.position);
-        Debug.Log("Normalized Vector: " + newForce);
-        float distance = Vector2.Distance(collision.gameObject.transform.position, this.transform.position);
-        power = (1f - (distance / radius)) * maxknockback;
+        if (collision.tag == "Duck")
+        {
+            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>(); //Duck
+            float power = 0f;
+            Vector3 newForce = Vector3.Normalize(collision.gameObject.transform.position - this.transform.position);
+            // Debug.Log("Normalized Vector: " + newForce);
+            float distance = Vector2.Distance(collision.gameObject.transform.position, this.transform.position);
+            power = (1f - (distance / radius)) * maxknockback;
 
-        Debug.Log("Force: " + power);
-        Debug.Log("Distance from impact = " + distance);
-        rb.AddForce(newForce * power);
-
+            Debug.Log("Force: " + power);
+            Debug.Log("Distance from impact = " + distance);
+            rb.AddForce(newForce * power);
+        }
         //Debug.Break();
     }
 

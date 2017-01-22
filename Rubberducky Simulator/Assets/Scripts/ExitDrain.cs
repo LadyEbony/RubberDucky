@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class ExitDrain : MonoBehaviour {
 
-	public GameController gameController;
-	public StageData stageData;
+	private GameController gameController;
 
 	void Awake()
 	{
-		//gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
-		stageData = gameObject.GetComponentInParent(typeof(StageData)) as StageData;
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 	}
 
 	// Use this for initialization
@@ -30,7 +28,7 @@ public class ExitDrain : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Duck")
 		{
-			stageData.DucksSaved++;
+            gameController.CurrentStage.DucksSaved++;
 			coll.gameObject.SetActive (false);
 		}
 	}

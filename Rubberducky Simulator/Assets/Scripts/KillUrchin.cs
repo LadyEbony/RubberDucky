@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillUrchin : MonoBehaviour {
+public class KillUrchin : MonoBehaviour
+{
 
-	public GameController gameController;
-	public StageData stageData;
+	private GameController gameController;
 
 	void Awake()
 	{
-		//gameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent(typeof(GameController)) as GameController;
-		stageData = gameObject.GetComponentInParent(typeof(StageData)) as StageData;
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 	}
 
 	// Use this for initialization
@@ -33,7 +32,7 @@ public class KillUrchin : MonoBehaviour {
 	{
 		if(coll.gameObject.tag == "Duck")
 		{
-			stageData.DucksKilled++;
+			gameController.CurrentStage.DucksKilled++;
 			coll.gameObject.SetActive(false);	
 		}
 	}

@@ -1,26 +1,21 @@
 fileFormatVersion: 2
-guid: 5d1f1b435f7c752468b7623afa14b94f
-timeCreated: 1485042306
+guid: 8c881092c6fe9f547a3e1f31c0da7809
+timeCreated: 1485046361
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Wave_0
-    21300002: Wave_1
-    21300004: Wave_2
-    21300006: Wave_3
-    21300008: Wave_4
-    21300010: Wave_5
-    21300012: Wave_6
-    21300014: Wave_7
-    21300016: Wave_8
-    21300018: Wave_9
-    21300020: Wave_10
-    21300022: Wave_11
-    21300024: Wave_12
-    21300026: Wave_13
-    21300028: Wave_14
-    21300030: Wave_15
-    21300032: Wave_16
+    21300000: Ripples_0
+    21300002: Ripples_1
+    21300004: Ripples_2
+    21300006: Ripples_3
+    21300008: Ripples_4
+    21300010: Ripples_5
+    21300012: Ripples_6
+    21300014: Ripples_7
+    21300016: Ripples_8
+    21300018: Ripples_9
+    21300020: Ripples_10
+    21300022: Ripples_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -87,221 +82,156 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wave_0
+      name: Ripples_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 113
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ripples_1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 84
+        width: 113
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ripples_2
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 84
+        width: 113
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ripples_3
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 84
+        width: 113
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ripples_4
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 84
+        width: 113
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ripples_5
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 84
+        width: 113
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Ripples_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 174
-        height: 174
+        width: 113
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wave_1
+      name: Ripples_7
       rect:
         serializedVersion: 2
-        x: 174
+        x: 113
         y: 0
-        width: 174
-        height: 174
+        width: 113
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wave_2
+      name: Ripples_8
       rect:
         serializedVersion: 2
-        x: 348
+        x: 226
         y: 0
-        width: 174
-        height: 174
+        width: 113
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wave_3
+      name: Ripples_9
       rect:
         serializedVersion: 2
-        x: 522
+        x: 339
         y: 0
-        width: 174
-        height: 174
+        width: 113
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wave_4
+      name: Ripples_10
       rect:
         serializedVersion: 2
-        x: 696
+        x: 452
         y: 0
-        width: 174
-        height: 174
+        width: 113
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wave_5
+      name: Ripples_11
       rect:
         serializedVersion: 2
-        x: 870
+        x: 565
         y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_6
-      rect:
-        serializedVersion: 2
-        x: 1044
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_7
-      rect:
-        serializedVersion: 2
-        x: 1218
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_8
-      rect:
-        serializedVersion: 2
-        x: 1392
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_9
-      rect:
-        serializedVersion: 2
-        x: 1566
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_10
-      rect:
-        serializedVersion: 2
-        x: 1740
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_11
-      rect:
-        serializedVersion: 2
-        x: 1914
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_12
-      rect:
-        serializedVersion: 2
-        x: 2088
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_13
-      rect:
-        serializedVersion: 2
-        x: 2262
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_14
-      rect:
-        serializedVersion: 2
-        x: 2436
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_15
-      rect:
-        serializedVersion: 2
-        x: 2610
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_16
-      rect:
-        serializedVersion: 2
-        x: 2784
-        y: 0
-        width: 174
-        height: 174
+        width: 113
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

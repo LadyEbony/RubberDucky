@@ -1,26 +1,21 @@
 fileFormatVersion: 2
-guid: 5d1f1b435f7c752468b7623afa14b94f
-timeCreated: 1485042306
+guid: 2ca0bd5d67317be41b8455a7cbd2d446
+timeCreated: 1485044046
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Wave_0
-    21300002: Wave_1
-    21300004: Wave_2
-    21300006: Wave_3
-    21300008: Wave_4
-    21300010: Wave_5
-    21300012: Wave_6
-    21300014: Wave_7
-    21300016: Wave_8
-    21300018: Wave_9
-    21300020: Wave_10
-    21300022: Wave_11
-    21300024: Wave_12
-    21300026: Wave_13
-    21300028: Wave_14
-    21300030: Wave_15
-    21300032: Wave_16
+    21300000: Urchin_0
+    21300002: Urchin_1
+    21300004: Urchin_2
+    21300006: Urchin_3
+    21300008: Urchin_4
+    21300010: Urchin_5
+    21300012: Urchin_6
+    21300014: Urchin_7
+    21300016: Urchin_8
+    21300018: Urchin_9
+    21300020: Urchin_10
+    21300022: Urchin_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -87,221 +82,156 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wave_0
+      name: Urchin_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Urchin_9
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 174
-        height: 174
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wave_1
+      name: Urchin_10
       rect:
         serializedVersion: 2
-        x: 174
+        x: 32
         y: 0
-        width: 174
-        height: 174
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Wave_2
+      name: Urchin_11
       rect:
         serializedVersion: 2
-        x: 348
+        x: 64
         y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_3
-      rect:
-        serializedVersion: 2
-        x: 522
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_4
-      rect:
-        serializedVersion: 2
-        x: 696
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_5
-      rect:
-        serializedVersion: 2
-        x: 870
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_6
-      rect:
-        serializedVersion: 2
-        x: 1044
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_7
-      rect:
-        serializedVersion: 2
-        x: 1218
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_8
-      rect:
-        serializedVersion: 2
-        x: 1392
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_9
-      rect:
-        serializedVersion: 2
-        x: 1566
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_10
-      rect:
-        serializedVersion: 2
-        x: 1740
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_11
-      rect:
-        serializedVersion: 2
-        x: 1914
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_12
-      rect:
-        serializedVersion: 2
-        x: 2088
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_13
-      rect:
-        serializedVersion: 2
-        x: 2262
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_14
-      rect:
-        serializedVersion: 2
-        x: 2436
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_15
-      rect:
-        serializedVersion: 2
-        x: 2610
-        y: 0
-        width: 174
-        height: 174
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Wave_16
-      rect:
-        serializedVersion: 2
-        x: 2784
-        y: 0
-        width: 174
-        height: 174
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

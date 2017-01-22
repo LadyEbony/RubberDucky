@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: 69ac198808a1bda469e35a3599d16dbf
-timeCreated: 1485040720
+guid: 864b355f42fcfc84cbd9cd42c02124eb
+timeCreated: 1485047210
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Water_0
-    21300002: Water_1
-    21300004: Water_2
-    21300006: Water_3
+    21300000: Soap_0
+    21300002: Soap_1
+    21300004: Soap_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -40,9 +39,9 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
-  alignment: 6
-  spritePivot: {x: 0, y: 1}
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
@@ -74,52 +73,39 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Water_0
+      name: Soap_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 35
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Water_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 35
-        width: 32
-        height: 32
+        x: 0
+        y: 0
+        width: 224
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Water_2
+      name: Soap_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 32
-        height: 32
+        x: 224
+        y: 0
+        width: 224
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Water_3
+      name: Soap_2
       rect:
         serializedVersion: 2
-        x: 35
-        y: 1
-        width: 32
-        height: 32
+        x: 448
+        y: 0
+        width: 224
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
