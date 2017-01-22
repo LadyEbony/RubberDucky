@@ -56,8 +56,7 @@ public class TitleMenuButtons : MonoBehaviour {
     private void StartButton()
     {
         Debug.Log("Start pressed");
-        GameObject.Find("Controller1").GetComponent<TitleMenuControllers>().GoToCenter();
-        GameObject.Find("Controller2").GetComponent<TitleMenuControllers>().GoToCenter();
+        GameObject.Find("Controller").GetComponent<TitleMenuControllers>().GoToCenter();
         Interavtive = false;
     }
 

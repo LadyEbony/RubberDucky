@@ -40,6 +40,10 @@ public class GameController : MonoBehaviour
                 TriggerResult();
             }
         }
+        else if (Input.GetButtonDown("Back_Base"))
+        {
+            SceneManager.LoadScene("Stage" + (StageIndex).ToString());
+        }
     }
 
     /// <summary>
