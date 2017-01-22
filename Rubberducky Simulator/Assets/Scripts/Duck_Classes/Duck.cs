@@ -14,6 +14,9 @@ public class Duck : MonoBehaviour
     public string[] IgnoranceLayers; //Ignore these layers
     bool isdead;
     public string DuckID;
+    
+    Animator anim;
+    [SerializeField] string DeathAnime;
     [SerializeField ]GameController GM;
     void Start()
     {
@@ -21,7 +24,7 @@ public class Duck : MonoBehaviour
         RB.gravityScale = 0;
         RB.mass = DuckWeight;
         isdead = false;
-        
+        anim = this.GetComponentInChildren<Animator>();        
     }
 
     // Update is called once per frame
@@ -51,7 +54,8 @@ public class Duck : MonoBehaviour
         {
             if(col.gameObject.tag == hit)
             {
-                col.gameObject.SetActive(false);
+                col.gameObject.GetComponent<Duck>().StartCoroutine(Death());
+                
                 if (GM != null)
                 {
                     GM.CurrentStage.DucksKilled++;
@@ -59,5 +63,12 @@ public class Duck : MonoBehaviour
                 
             }
         }
+    }
+    public IEnumerator Death()
+    {
+        anim.SetBool(DeathAnime, true);
+        yield return new WaitForSeconds(0.5f);
+        this.gameObject.SetActive(false);
+       
     }
 }
