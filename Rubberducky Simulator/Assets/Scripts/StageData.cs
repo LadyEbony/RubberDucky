@@ -34,7 +34,7 @@ public class StageData : MonoBehaviour
         set
         {
             _DucksKilled = value;
-            if (_DucksKilled >= Ducks.Count)
+			if (_DucksKilled >= Ducks.Count)
                 GC.StageRestart();
         }
     }
@@ -45,5 +45,6 @@ public class StageData : MonoBehaviour
         GC = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         GameObject[] ducks = GameObject.FindGameObjectsWithTag("Duck");
         Ducks = new List<GameObject>(ducks);
+		Debug.Log ("Ducks size: " + Ducks.Count);
     }
 }

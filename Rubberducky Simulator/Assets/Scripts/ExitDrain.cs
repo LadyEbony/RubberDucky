@@ -24,7 +24,7 @@ public class ExitDrain : MonoBehaviour {
 	/// <summary>
 	/// Trigger function called when a "duck" touches the ExitDrain trigger
 	/// </summary>
-	void OnTriggerEnter2D(Collider2D coll)
+	void OnCollisionEnter2D(Collision2D coll)
 	{
 		if(coll.gameObject.tag == "Duck")
 		{

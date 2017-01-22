@@ -9,19 +9,20 @@ public class GameController : MonoBehaviour
     private int ResultScenario;
 
     private int StageIndex;
+
+	[SerializeField]
     private StageData _CurrentStage;
     public StageData CurrentStage
     {
         get
         {
-            return _CurrentStage;
+			return _CurrentStage;
         }
     }
 
     // Use this for initialization
     void Start()
     {
-        _CurrentStage = GameObject.Find("Level").GetComponent<StageData>();
 
         string Scenename = SceneManager.GetActiveScene().name;
         StageIndex = int.Parse(Scenename.Substring(5));
@@ -47,7 +48,7 @@ public class GameController : MonoBehaviour
     public void StageWin()
     {
         Debug.Log("Triggered Win");
-        GameObject.Find("WinningDuck").SetActive(true);
+        //GameObject.Find("WinningDuck").SetActive(true);
         ResultScenario = 1;
 
     }
