@@ -12,8 +12,8 @@ public class WhaleMover : MonoBehaviour
 
     private int curr_pos = 0;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         if (TravelPoints.Count > 1)
         {
@@ -21,8 +21,8 @@ public class WhaleMover : MonoBehaviour
             StartCoroutine("MoveWhale");
         }
 
-	}
-	
+    }
+
     IEnumerator MoveWhale()
     {
         while (true)
@@ -36,6 +36,7 @@ public class WhaleMover : MonoBehaviour
             {
                 next_pos = curr_pos + 1;
             }
+            FaceTowards(TravelPoints[curr_pos].position, TravelPoints[next_pos].position);
             //Debug.Log(curr_pos + " " + next_pos);
             float time = 0f;
             while (time < TravelTime)
@@ -49,5 +50,13 @@ public class WhaleMover : MonoBehaviour
             }
             curr_pos = next_pos;
         }
+    }
+
+    private void FaceTowards(Vector3 target, Vector3 original)
+    {
+        Vector3 vectorToTarget = target - original;
+        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg + 90;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = q;
     }
 }
