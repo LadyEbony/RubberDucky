@@ -34,7 +34,7 @@ public class StageData : MonoBehaviour
         set
         {
             _DucksKilled = value;
-			if (_DucksKilled >= Ducks.Count)
+			if (_DucksKilled > Ducks.Count - _MinimumDucksRequired)
                 GC.StageRestart();
         }
     }
