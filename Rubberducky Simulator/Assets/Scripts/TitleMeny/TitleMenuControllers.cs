@@ -36,16 +36,16 @@ public class TitleMenuControllers : MonoBehaviour {
 
         if (CenterPosition)
         {
-            if (Input.GetButtonDown("Submit_P1"))
+            if (Input.GetButtonDown("Start_P1"))
             {
                 Controller1Image.GetComponent<Outline>().enabled = true;
             }
-            if (Input.GetButtonDown("Submit_P2"))
+            if (Input.GetButtonDown("Start_P2"))
             {
                 Controller2Image.GetComponent<Outline>().enabled = true;
             }
 
-            if (Input.GetButtonUp("Submit_P1"))
+            if (Input.GetButtonUp("Start_P1"))
             {
                 Controller1Image.GetComponent<Outline>().enabled = false;
             }
@@ -54,7 +54,7 @@ public class TitleMenuControllers : MonoBehaviour {
                 Controller2Image.GetComponent<Outline>().enabled = false;
             }
 
-            if (Input.GetButton("Submit_P1") && Input.GetButton("Submit_P2"))
+            if (Input.GetButton("Start_P1") && Input.GetButton("Start_P2"))
             {
                 GoToGame();
             }
@@ -67,9 +67,6 @@ public class TitleMenuControllers : MonoBehaviour {
         Debug.Log("Recieved center message.");
         moveSpeed = -10.0f * Mathf.Sign(transform.position.x);
         CenterPosition = true;
-
-        GameObject.Find("Start").GetComponent<Button>().interactable = false;
-        GameObject.Find("Quit").GetComponent<Button>().interactable = false;
     }
 
     public void GoOutOfBounds()
@@ -77,9 +74,6 @@ public class TitleMenuControllers : MonoBehaviour {
         Debug.Log("Recieved outside message.");
         moveSpeed = 10.0f * Mathf.Sign(transform.position.x);
         CenterPosition = false;
-
-        GameObject.Find("Start").GetComponent<Button>().interactable = true;
-        GameObject.Find("Quit").GetComponent<Button>().interactable = true;
     }
 
     private void UpdatePosition()
