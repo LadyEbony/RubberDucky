@@ -45,7 +45,7 @@ public class Duck : MonoBehaviour
         {
             Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer(Lay));
             Debug.Log("Ignoring  " + col.gameObject.tag + " " + Lay);
-            Debug.Break();
+            //Debug.Break();
         }
         foreach (string hit in CollisionTag)
         {

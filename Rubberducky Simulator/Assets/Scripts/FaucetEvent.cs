@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CursorEvent : MonoBehaviour {
-
-    public float cursorSpeed;
-    [SerializeField] string HorizontalAxis;
-    [SerializeField] string VerticalAxis;
-    [SerializeField] string AButton;
-    float horizontal;
-    float vertical;
+public class FaucetEvent : MonoBehaviour {
 
     public GameObject RippleObject;
-    public string playerid;
+    private float TimeRecord;
+    private float TimeMax = 1;
 
     [SerializeField]
     float x_change = 0.15f;
@@ -21,33 +15,19 @@ public class CursorEvent : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        TimeRecord = 0.0f;
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        horizontal = Input.GetAxisRaw(HorizontalAxis + playerid);
-        vertical = Input.GetAxisRaw(VerticalAxis + playerid);
-       // Debug.Log(horizontal + " " + vertical);
-        if ((horizontal != 0) | (vertical != 0))
+        TimeRecord += Time.deltaTime;
+        if (TimeRecord >= TimeMax)
         {
-            Vector3 move = new Vector3(horizontal, -vertical, 0);
-            //Debug.Log(move);
-            transform.Translate(move * Time.deltaTime * cursorSpeed);
-        }
-        else
-        {
-            transform.Translate(Vector3.zero);
-            //Debug.Log("Stop");
-        }
-        if(Input.GetButtonDown(AButton + playerid))
-        {
-            //Debug.Log("Pressed A");
             CreateWave();
+            TimeRecord = 0.0f;
         }
-        
-
     }
     private void CreateWave()
     {
