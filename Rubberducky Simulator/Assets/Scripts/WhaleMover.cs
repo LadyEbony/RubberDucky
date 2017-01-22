@@ -36,12 +36,12 @@ public class WhaleMover : MonoBehaviour
             {
                 next_pos = curr_pos + 1;
             }
-            Debug.Log(curr_pos + " " + next_pos);
+            //Debug.Log(curr_pos + " " + next_pos);
             float time = 0f;
             while (time < TravelTime)
             {
                 //Debug.Log(time / TravelTime);
-                Debug.Log(TravelPoints[curr_pos].position + " " + TravelPoints[next_pos].position);
+                //Debug.Log(TravelPoints[curr_pos].position + " " + TravelPoints[next_pos].position);
                 transform.position = Vector3.Lerp(TravelPoints[curr_pos].position, TravelPoints[next_pos].position, time / TravelTime);
                 //Debug.Log(transform.position);
                 time += Time.deltaTime;
