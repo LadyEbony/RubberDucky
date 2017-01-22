@@ -44,17 +44,19 @@ public class Duck : MonoBehaviour
                 //Debug.Break();
             }
         }
+		/*
         foreach (string Lay in IgnoranceLayers)
         {
             Physics2D.IgnoreLayerCollision(this.gameObject.layer, LayerMask.NameToLayer(Lay));
             Debug.Log("Ignoring  " + col.gameObject.tag + " " + Lay);
             //Debug.Break();
         }
+        */
         foreach (string hit in CollisionTag)
         {
             if(col.gameObject.tag == hit)
             {
-                col.gameObject.GetComponent<Duck>().StartCoroutine(Death());
+				col.gameObject.SetActive (false);
                 
                 if (GM != null)
                 {

@@ -36,7 +36,7 @@ public class TitleMenuControllers : MonoBehaviour {
 
         if (CenterPosition)
         {
-            if (Input.GetButtonDown("Submit_Base"))
+            if (Input.GetButtonDown("Submit_P1"))
             {
                 Controller1Image.GetComponent<Outline>().enabled = true;
             }
@@ -45,7 +45,7 @@ public class TitleMenuControllers : MonoBehaviour {
                 Controller2Image.GetComponent<Outline>().enabled = true;
             }
 
-            if (Input.GetButtonUp("Submit_Base"))
+            if (Input.GetButtonUp("Submit_P1"))
             {
                 Controller1Image.GetComponent<Outline>().enabled = false;
             }
@@ -54,7 +54,7 @@ public class TitleMenuControllers : MonoBehaviour {
                 Controller2Image.GetComponent<Outline>().enabled = false;
             }
 
-            if (Input.GetButton("Submit_Base") || Input.GetButton("Submit_P2"))
+            if (Input.GetButton("Submit_P1") && Input.GetButton("Submit_P2"))
             {
                 GoToGame();
             }

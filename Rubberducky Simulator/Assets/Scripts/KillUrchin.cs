@@ -33,7 +33,7 @@ public class KillUrchin : MonoBehaviour
 		if(coll.gameObject.tag == "Duck")
 		{
 			gameController.CurrentStage.DucksKilled++;
-            coll.gameObject.GetComponent<Duck>().Death();	
+			coll.gameObject.SetActive (false);
 		}
 	}
 }

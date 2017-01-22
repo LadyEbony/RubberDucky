@@ -28,8 +28,8 @@ public class RippleEvent : MonoBehaviour {
             float distance = Vector2.Distance(collision.gameObject.transform.position, this.transform.position);
             power = (1f - (distance / radius)) * maxknockback;
 
-            Debug.Log("Force: " + power);
-            Debug.Log("Distance from impact = " + distance);
+            //Debug.Log("Force: " + power);
+            //Debug.Log("Distance from impact = " + distance);
             rb.AddForce(newForce * power);
         }
         //Debug.Break();
