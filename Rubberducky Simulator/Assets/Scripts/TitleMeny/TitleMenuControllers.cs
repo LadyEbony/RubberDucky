@@ -58,6 +58,10 @@ public class TitleMenuControllers : MonoBehaviour {
             {
                 GoToGame();
             }
+
+			if (Input.GetButtonDown ("Cancel_Base")) {
+				GoOutOfBounds ();
+			}
         }
 
     }
@@ -74,6 +78,8 @@ public class TitleMenuControllers : MonoBehaviour {
         Debug.Log("Recieved outside message.");
         moveSpeed = 10.0f * Mathf.Sign(transform.position.x);
         CenterPosition = false;
+		GameObject.Find ("Menu").GetComponent<TitleMenuButtons> ().Interavtive = true;
+		GameObject.Find ("Menu").GetComponent<TitleMenuButtons> ().DuckCursor.SetActive (true);
     }
 
     private void UpdatePosition()
@@ -87,7 +93,7 @@ public class TitleMenuControllers : MonoBehaviour {
                 {
                     moveSpeed = 0.0f;
                 }
-                else if (!CenterPosition && transform.position.x <= outOfBoundsPos)
+				else if (!CenterPosition && GetComponent<RectTransform>().anchoredPosition.x <= outOfBoundsPos)
                 {
                     moveSpeed = 0.0f;
                 }
@@ -103,7 +109,7 @@ public class TitleMenuControllers : MonoBehaviour {
                 {
                     moveSpeed = 0.0f;
                 }
-                else if (!CenterPosition && transform.position.x >= outOfBoundsPos)
+				else if (!CenterPosition && GetComponent<RectTransform>().anchoredPosition.x >= outOfBoundsPos)
                 {
                     moveSpeed = 0.0f;
                 }

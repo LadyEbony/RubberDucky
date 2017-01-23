@@ -71,7 +71,11 @@ public class GameController : MonoBehaviour
     {
         if (ResultScenario == 1)
         {
-            SceneManager.LoadScene("Stage" + (StageIndex + 1).ToString());
+			if (StageIndex == 7) {
+				SceneManager.LoadScene("TitleMenu");
+			}
+			else
+				SceneManager.LoadScene("Stage" + (StageIndex + 1).ToString());
         }
         else if (ResultScenario == 2)
         {

@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 743e14463bd92a74f9df5d7bbc1dfc37
-timeCreated: 1485067941
+guid: 31217056362c8564f8a902f02ed6f3c0
+timeCreated: 1485121489
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: robber_bob-Sheet_0
-    21300002: robber_bob-Sheet_1
+    21300000: Start_0
+    21300002: Start_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -62,36 +62,36 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 8192
-    textureFormat: 12
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robber_bob-Sheet_0
+      name: Start_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 55
-        height: 110
+        y: 90
+        width: 90
+        height: 90
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: robber_bob-Sheet_1
+      name: Start_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 1
-        width: 53
-        height: 108
+        x: 0
+        y: 0
+        width: 90
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

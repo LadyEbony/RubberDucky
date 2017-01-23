@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: 743e14463bd92a74f9df5d7bbc1dfc37
-timeCreated: 1485067941
+guid: 39c3c40c9b9077345a8d5e2a89e443c6
+timeCreated: 1485124113
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: robber_bob-Sheet_0
-    21300002: robber_bob-Sheet_1
+    21300000: normalduck_talking-Sheet_0
+    21300002: normalduck_talking-Sheet_1
+    21300004: normalduck_talking-Sheet_2
+    21300006: normalduck_talking-Sheet_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -62,36 +64,62 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 8192
-    textureFormat: 12
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robber_bob-Sheet_0
+      name: normalduck_talking-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 55
-        height: 110
+        width: 66
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: robber_bob-Sheet_1
+      name: normalduck_talking-Sheet_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 1
-        width: 53
-        height: 108
+        x: 66
+        y: 0
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: normalduck_talking-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: normalduck_talking-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 66
+        height: 70
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

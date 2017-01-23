@@ -34,6 +34,8 @@ public class Duck : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
+		//GetComponent<AudioSource> ().Play ();
+
         Debug.Log("Hit");
         foreach (string ignore in IgnoreTag)
         {

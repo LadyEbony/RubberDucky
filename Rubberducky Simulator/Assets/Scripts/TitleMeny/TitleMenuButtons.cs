@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TitleMenuButtons : MonoBehaviour {
 
+	[SerializeField] public GameObject DuckCursor;
+
     [SerializeField] private GameObject ButtonSelected;
     [SerializeField] private GameObject ButtonNotSelected;
 
@@ -12,14 +14,14 @@ public class TitleMenuButtons : MonoBehaviour {
     [SerializeField] private GameObject ButtonQuit;
 
     [SerializeField] private int MaxWidth = 600;
-    [SerializeField] private int MaxHeight = 200;
-    [SerializeField] private int MinWidth = 450;
-    [SerializeField] private int MinHeight = 150;
+    [SerializeField] private int MaxHeight = 483;
+    [SerializeField] private int MinWidth = 500;
+    [SerializeField] private int MinHeight = 450;
 
     [SerializeField] private float growthWidthSpeed = 30;
     [SerializeField] private float growthHeightSpeed = 10;
 
-    [SerializeField] private bool Interavtive;
+    public bool Interavtive;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class TitleMenuButtons : MonoBehaviour {
 
         ButtonSelected = ButtonStart;
         ButtonNotSelected = ButtonQuit;
-
+		DuckCursor.transform.position = new Vector3(ButtonStart.transform.position.x + 2.5f,  ButtonStart.transform.position.y + 6, -0);
         Interavtive = true;
     }
 
@@ -38,16 +40,21 @@ public class TitleMenuButtons : MonoBehaviour {
         {
             if (Input.GetAxis("Joystick_Base") < -0.5)
             {
+				DuckCursor.transform.position = new Vector3(ButtonStart.transform.position.x + 2.5f,  ButtonStart.transform.position.y + 6, -0);
                 ButtonSelected = ButtonStart;
                 ButtonNotSelected = ButtonQuit;
             }
             else if (Input.GetAxis("Joystick_Base") > 0.5)
             {
+				DuckCursor.transform.position = new Vector3(ButtonQuit.transform.position.x + 2.5f,  ButtonQuit.transform.position.y + 6, -0);
                 ButtonSelected = ButtonQuit;
                 ButtonNotSelected = ButtonStart;
             }
 
-            UpdateSize();
+			//Debug.Log ("Button Selected : " + ButtonSelected);
+			//Debug.Log ("Button Not Selected : " + ButtonNotSelected);
+
+            //UpdateSize();
 
             DetectButton();
         }
@@ -95,11 +102,12 @@ public class TitleMenuButtons : MonoBehaviour {
     {
         if (Input.GetButtonDown("Submit_Base"))
         {
-            if (ButtonSelected = ButtonStart)
+            if (ButtonSelected == ButtonStart)
             {
+				DuckCursor.SetActive (false);
                 StartButton();
             }
-            else if (ButtonSelected = ButtonQuit)
+            else if (ButtonSelected == ButtonQuit)
             {
                 QuitButton();
             }
