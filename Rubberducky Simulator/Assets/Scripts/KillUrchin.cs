@@ -5,13 +5,6 @@ using UnityEngine;
 public class KillUrchin : MonoBehaviour
 {
 
-	private GameController gameController;
-
-	void Awake()
-	{
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-	}
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -32,8 +25,7 @@ public class KillUrchin : MonoBehaviour
 	{
 		if(coll.gameObject.tag == "Duck")
 		{
-			gameController.CurrentStage.DucksKilled++;
-			coll.gameObject.SetActive (false);
-		}
+            StartCoroutine(coll.gameObject.GetComponent<Duck>().Death());
+        }
 	}
 }

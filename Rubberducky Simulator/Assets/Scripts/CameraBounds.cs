@@ -2,38 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraBounds : MonoBehaviour {
+public class CameraBounds : MonoBehaviour
+{
+    [SerializeField]
+    private SpriteRenderer Screen;
+
+    private Vector3 LastPosition;
 
     // Use this for initialization
-    public float camerax;
-    public float cameray;
-    public float cameranegx; //Must be negative
-    public float cameranegy; //These must be negative
-	void Start () {
+	void Start ()
+    {
+        transform.position = Screen.transform.position;
 	}
 
     // Update is called once per frame
     void Update()
     {
-
-        // X axis
-        if (transform.position.x <= cameranegx)
+        Debug.Log(transform.localPosition.x + " > " + Screen.transform.localPosition.x + " + " + Screen.sprite.rect.size.x);
+        if (transform.localPosition.x > Screen.transform.localPosition.x + Screen.sprite.rect.size.x)
+            //transform.localPosition.x < Screen.transform.localPosition.x + Screen.sprite.bounds.min.x ||
+          // transform.localPosition.y > Screen.transform.localPosition.y + Screen.sprite.bounds.max.y ||
+           // transform.localPosition.y < Screen.transform.localPosition.y + Screen.sprite.bounds.min.y)
         {
-            transform.position = new Vector2(cameranegx, transform.position.y);
+            //transform.position = Mathf.Clamp();
         }
-        else if (transform.position.x >= camerax)
+       else
         {
-            transform.position = new Vector2(camerax, transform.position.y);
+            Debug.Log("ignore");
+            LastPosition = transform.position;
         }
-
-        // Y axis
-        if (transform.position.y <= cameranegy)
-        {
-            transform.position = new Vector2(transform.position.x, cameranegy);
-        }
-        else if (transform.position.y >= cameray)
-        {
-            transform.position = new Vector2(transform.position.x, cameray);
-        }
+       
     }
 }

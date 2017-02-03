@@ -15,10 +15,11 @@ public class Collectible : MonoBehaviour {
     {
         foreach(string duck in DucksAllowed)
         {
+            /*
             if (col.gameObject.GetComponent<Duck>().DuckID == duck)
             {
                 gameObject.SetActive(false);
-            }
+            }*/
         }
     }
 

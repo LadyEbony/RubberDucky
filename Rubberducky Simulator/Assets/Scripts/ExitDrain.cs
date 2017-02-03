@@ -29,7 +29,18 @@ public class ExitDrain : MonoBehaviour {
 		if(coll.gameObject.tag == "Duck")
 		{
             gameController.CurrentStage.DucksSaved++;
-			coll.gameObject.SetActive (false);
+            coll.gameObject.SetActive(false);
+            //StartCoroutine("Shrink", coll.gameObject);
 		}
 	}
+
+    IEnumerator Shrink(GameObject obj)
+    {
+        while (obj.transform.localScale.x > 0 && obj.transform.localScale.y > 0)
+        {
+            obj.transform.localScale = new Vector3(obj.transform.localScale.x - 0.1f, obj.transform.localScale.y - 0.1f, obj.transform.localScale.z);
+            yield return new WaitForSeconds(0.1f);
+        }
+        obj.SetActive(false);
+    }
 }

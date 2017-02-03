@@ -7,7 +7,7 @@ public class StageData : MonoBehaviour
     public List<GameObject> Ducks = new List<GameObject>();
 
     [SerializeField]
-    private int _MinimumDucksRequired = 0;
+    private int _MinimumDucksRequired;
     public int MinimumDucksRequired
     {
         get { return _MinimumDucksRequired; }
@@ -22,21 +22,9 @@ public class StageData : MonoBehaviour
         set
         {
             _DucksSaved = value;
+            GameObject.FindGameObjectWithTag("UI").GetComponent<GameplayUI>().UpdateDucksLeft(MinimumDucksRequired - _DucksSaved);
             if (_DucksSaved >= MinimumDucksRequired)
                 GC.StageWin();
-        }
-    }
-
-    public int _DucksKilled = 0;
-    public int DucksKilled
-    {
-        get { return _DucksKilled; }
-        set
-        {
-			Debug.Log (DucksKilled);
-            _DucksKilled = value;
-			if (_DucksKilled > Ducks.Count - _MinimumDucksRequired)
-                GC.StageRestart();
         }
     }
 
@@ -46,6 +34,18 @@ public class StageData : MonoBehaviour
         GC = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         GameObject[] ducks = GameObject.FindGameObjectsWithTag("Duck");
         Ducks = new List<GameObject>(ducks);
-		Debug.Log ("Ducks size: " + Ducks.Count);
+        /*
+        foreach(GameObject duck in Ducks)
+        {
+            Debug.Log(duck.name);
+        }
+        */
+        MinimumDucksRequired = Ducks.Count;
+
+    }
+
+    void Start()
+    {
+        GameObject.FindGameObjectWithTag("UI").GetComponent<GameplayUI>().UpdateDucksLeft(MinimumDucksRequired);
     }
 }

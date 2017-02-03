@@ -10,6 +10,9 @@ public class WhaleMover : MonoBehaviour
     [SerializeField]
     private List<Transform> TravelPoints = new List<Transform>();
 
+    [SerializeField]
+    private bool FaceTowardsTarget = false;
+
     private int curr_pos = 0;
 
     // Use this for initialization
@@ -36,7 +39,10 @@ public class WhaleMover : MonoBehaviour
             {
                 next_pos = curr_pos + 1;
             }
-            FaceTowards(TravelPoints[curr_pos].position, TravelPoints[next_pos].position);
+
+            if (FaceTowardsTarget)
+                FaceTowards(TravelPoints[curr_pos].position, TravelPoints[next_pos].position);
+
             //Debug.Log(curr_pos + " " + next_pos);
             float time = 0f;
             while (time < TravelTime)

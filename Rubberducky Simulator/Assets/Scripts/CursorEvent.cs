@@ -5,9 +5,6 @@ using UnityEngine;
 public class CursorEvent : MonoBehaviour {
 
     public float cursorSpeed;
-    [SerializeField] string HorizontalAxis;
-    [SerializeField] string VerticalAxis;
-    [SerializeField] string AButton;
     float horizontal;
     float vertical;
 
@@ -19,34 +16,52 @@ public class CursorEvent : MonoBehaviour {
     [SerializeField]
     float y_change = 0.19f;
 
+    private GameObject DuckConvo;
+
     // Use this for initialization
-    void Start () {
-		
+    void Awake ()
+    {
+        DuckConvo = GameObject.FindGameObjectWithTag("DuckConversation");
+        
 	}
 	
-	// Update is called once per frame
-	void Update ()
+    void Start()
     {
-        horizontal = Input.GetAxisRaw(HorizontalAxis + playerid);
-        vertical = Input.GetAxisRaw(VerticalAxis + playerid);
+        transform.position = transform.parent.transform.position;
+    }
+
+    void Update()
+    {
+        if (DuckConvo != null && DuckConvo.activeInHierarchy)
+            return;
+
+        if (Input.GetButtonDown("Submit_P" + playerid))
+        {
+            //Debug.Log("Pressed A");
+            CreateWave();
+        }
+    }
+
+	// Update is called once per frame
+	void FixedUpdate ()
+    {
+        if (DuckConvo != null && DuckConvo.activeInHierarchy)
+            return;
+
+        horizontal = Input.GetAxisRaw("Horizontal_P" + playerid);
+        vertical = Input.GetAxisRaw("Vertical_P" + playerid);
        // Debug.Log(horizontal + " " + vertical);
         if ((horizontal != 0) | (vertical != 0))
         {
             Vector3 move = new Vector3(horizontal, -vertical, 0);
             //Debug.Log(move);
-            transform.Translate(move * Time.deltaTime * cursorSpeed);
+            GetComponent<Rigidbody2D>().MovePosition(transform.position + move * Time.fixedDeltaTime * cursorSpeed);
+            //transform.Translate(move * Time.deltaTime * cursorSpeed); 
         }
         else
         {
-            transform.Translate(Vector3.zero);
-            //Debug.Log("Stop");
-        }
-        if(Input.GetButtonDown(AButton + playerid))
-        {
-            //Debug.Log("Pressed A");
-            CreateWave();
-        }
-        
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        } 
 
     }
     private void CreateWave()

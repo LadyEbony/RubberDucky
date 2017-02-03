@@ -21,11 +21,13 @@ public class RippleEvent : MonoBehaviour {
     {
         if (collision.tag == "Duck")
         {
+            float distance = Vector2.Distance(collision.gameObject.transform.position, this.transform.position);
+            if (distance > radius)
+                return;
+
             Rigidbody2D rb = collision.GetComponent<Rigidbody2D>(); //Duck
             float power = 0f;
             Vector3 newForce = Vector3.Normalize(collision.gameObject.transform.position - this.transform.position);
-            // Debug.Log("Normalized Vector: " + newForce);
-            float distance = Vector2.Distance(collision.gameObject.transform.position, this.transform.position);
             power = (1f - (distance / radius)) * maxknockback;
 
             //Debug.Log("Force: " + power);

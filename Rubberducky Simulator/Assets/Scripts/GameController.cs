@@ -2,47 +2,72 @@
 using System.Collections.Generic;
 using UnityEngine;
 //using UnityEditor;
+using System.IO;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     private int ResultScenario;
 
+    private int MaxStage;
+
     private int StageIndex;
 
-	[SerializeField]
-    private StageData _CurrentStage;
+    private bool StageDone = false;
+
     public StageData CurrentStage
     {
         get
         {
-			return _CurrentStage;
+			return GetComponent<StageData>();
         }
     }
 
     // Use this for initialization
     void Start()
     {
-
         string Scenename = SceneManager.GetActiveScene().name;
         StageIndex = int.Parse(Scenename.Substring(5));
 
-        ResultScenario = 0;
+        //MaxStage = // searches the current directory and sub directory
+        DirectoryInfo dir = new DirectoryInfo(Application.dataPath + "/Scenes/Stages/");
+        MaxStage = dir.GetFiles("*.unity").Length;
+
+        //Debug.Log(MaxStage);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ResultScenario != 0)
-        {
-            if (Input.GetButtonDown("Submit_P1") || Input.GetButtonDown("Submit_P2") || Input.GetButtonDown("Submit_Base"))
-            {
-                TriggerResult();
-            }
-        }
-        else if (Input.GetButtonDown("Back_Base"))
+        if (Input.GetButtonDown("Back_Base"))
         {
             SceneManager.LoadScene("Stage" + (StageIndex).ToString());
+        }
+        else if (StageDone && Input.GetButtonDown("Y_Base"))
+        {
+            if (StageIndex == MaxStage - 1)
+                SceneManager.LoadScene("TitleMenu");
+            else
+                SceneManager.LoadScene("Stage" + (StageIndex + 1).ToString());
+        }
+        else if (Input.GetButtonDown("Rb_Base"))
+        {
+            if (StageIndex == MaxStage - 1)
+                SceneManager.LoadScene("TitleMenu");
+            else
+                SceneManager.LoadScene("Stage" + (StageIndex + 1).ToString());
+        }
+        else if (Input.GetButtonDown("Lb_Base"))
+        {
+            if (StageIndex == 0)
+            {
+                SceneManager.LoadScene("TitleMenu");
+            }
+            else
+            {
+                SceneManager.LoadScene("Stage" + (StageIndex - 1).ToString());
+            }
+
         }
     }
 
@@ -51,35 +76,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     public void StageWin()
     {
-        Debug.Log("Triggered Win");
-        //GameObject.Find("WinningDuck").SetActive(true);
-        ResultScenario = 1;
-
-    }
-
-    /// <summary>
-    /// Resetart Current Stage
-    /// </summary>
-    public void StageRestart()
-    {
-        Debug.Log("Triggered Reset");
-        ResultScenario = 2;
-
-    }
-
-    private void TriggerResult()
-    {
-        if (ResultScenario == 1)
-        {
-			if (StageIndex == 7) {
-				SceneManager.LoadScene("TitleMenu");
-			}
-			else
-				SceneManager.LoadScene("Stage" + (StageIndex + 1).ToString());
-        }
-        else if (ResultScenario == 2)
-        {
-            SceneManager.LoadScene("Stage" + (StageIndex).ToString());
-        }
+        GameObject.FindGameObjectWithTag("UI").GetComponent<GameplayUI>().UpdateWinMessage();
+        StageDone = true;
     }
 }
