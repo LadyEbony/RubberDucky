@@ -22,7 +22,11 @@ public class Duck : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        GetComponent<AudioSource>().Play();
+        if (Random.Range(1, 10) > 8)
+        {
+            GetComponents<AudioSource>()[0].Play();
+        }
+        GetComponents<AudioSource>()[Random.Range(1, 3)].Play();
     }
 
     public IEnumerator Death()

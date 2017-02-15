@@ -9,7 +9,8 @@ public class DevilDuck : MonoBehaviour
         if (other.gameObject.tag == "Duck")
         {
             StartCoroutine(other.gameObject.GetComponent<Duck>().Death());
-            StartCoroutine(GetComponent<Duck>().Death());
+            if (other.gameObject.GetComponent<DevilDuck>() != null)
+                StartCoroutine(GetComponent<Duck>().Death());
             this.GetComponent<AudioSource>().Play();
         }
     }

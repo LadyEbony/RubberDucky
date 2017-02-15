@@ -30,5 +30,6 @@ public class DoorSwitch : MonoBehaviour
         GetComponent<SpriteStorage>().SetSprite(0);
         Door.GetComponent<Collider2D>().enabled = true;
         Door.GetComponent<SpriteStorage>().SetSprite(0);
+        this.GetComponent<AudioSource>().Play();
     }
 }
