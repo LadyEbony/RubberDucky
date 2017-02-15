@@ -22,6 +22,7 @@ public class DoorSwitch : MonoBehaviour
         GetComponent<SpriteStorage>().SetSprite(1);
         Door.GetComponent<Collider2D>().enabled = false;
         Door.GetComponent<SpriteStorage>().SetSprite(1);
+        this.GetComponent<AudioSource>().Play();
     }
 
     void OnTriggerExit2D(Collider2D other)

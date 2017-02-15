@@ -30,6 +30,7 @@ public class ExitDrain : MonoBehaviour {
 		{
             gameController.CurrentStage.DucksSaved++;
             coll.gameObject.SetActive(false);
+            this.GetComponent<AudioSource>().Play();
             //StartCoroutine("Shrink", coll.gameObject);
 		}
 	}

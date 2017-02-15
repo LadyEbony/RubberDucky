@@ -10,6 +10,7 @@ public class DevilDuck : MonoBehaviour
         {
             StartCoroutine(other.gameObject.GetComponent<Duck>().Death());
             StartCoroutine(GetComponent<Duck>().Death());
+            this.GetComponent<AudioSource>().Play();
         }
     }
 }

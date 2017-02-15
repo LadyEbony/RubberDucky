@@ -27,5 +27,6 @@ public class KillUrchin : MonoBehaviour
 		{
             StartCoroutine(coll.gameObject.GetComponent<Duck>().Death());
         }
+        GetComponent<AudioSource>().Play();
 	}
 }

@@ -12,7 +12,10 @@ public class TitleMenuButtons : MonoBehaviour {
     {
 
     }
-    
+    public void PlaySound()
+    {
+        this.GetComponent<AudioSource>().Play();
+    }
     public void GoToScene(string scene)
     {
         SceneManager.LoadScene(scene);
