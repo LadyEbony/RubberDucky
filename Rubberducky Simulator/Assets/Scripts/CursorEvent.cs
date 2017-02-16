@@ -8,6 +8,7 @@ public class CursorEvent : MonoBehaviour {
     float horizontal;
     float vertical;
 
+    public float WaveInputDelay = 0.5f;
     public GameObject RippleObject;
     public string playerid;
 
@@ -30,15 +31,22 @@ public class CursorEvent : MonoBehaviour {
         transform.position = transform.parent.transform.position;
     }
 
+
+    float CurrentTime = 0.5f;
     void Update()
     {
-        if (DuckConvo != null && DuckConvo.activeInHierarchy)
+        if (DuckConvo != null && DuckConvo.activeSelf)
             return;
 
-        if (Input.GetButtonDown("Submit_P" + playerid))
+        if (Input.GetButtonDown("Submit_P" + playerid) && CurrentTime <= 0f)
         {
             //Debug.Log("Pressed A");
             CreateWave();
+            CurrentTime = WaveInputDelay;
+        }
+        else if (CurrentTime > 0f)
+        {
+            CurrentTime -= Time.deltaTime;
         }
     }
 
